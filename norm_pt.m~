@@ -1,0 +1,8 @@
+function dyads = norm_pt(dyads,D)
+    %Returns dyads normalized component-wise with respect to D.
+    Dmax = max(D);
+    Dmin = min(D);
+    for i = 1 : length(dyads)
+       dyads(i,:) = max(min((dyads(i,:)-Dmin)./(Dmax-Dmin),1),0);
+    end
+end
